@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campeonato Truc y Parchís | Falla Sant Roc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Escudo Falla Sant Roc" class="logo-image">
+            <div class="brand">
+                <h1>Falla Sant Roc</h1>
+                <p>Paterna</p>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#clasificacion" class="nav-link">Clasificación</a></li>
+                <li><a href="#calendario" class="nav-link">Calendario</a></li>
+                <li><a href="#parejas" class="nav-link">Parejas</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Campeonato Interno <br><span class="text-yellow">Truc y Parchís</span><br>Falla Sant Roc 2026</h1>
+            <p class="hero-description">Sigue de cerca a las parejas participantes, los próximos enfrentamientos y la clasificación general de nuestra falla.</p>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <main class="container">
+        <!-- Game Selector Tabs -->
+        <div class="game-selector">
+            <button class="game-tab active" data-game="truc">⚔️ Truc</button>
+            <button class="game-tab" data-game="parchis">🎲 Parchís</button>
+        </div>
+
+        <!-- Section: Clasificación -->
+        <section id="clasificacion" class="page-section">
+            <div class="section-header">
+                <h2>Clasificación General</h2>
+                <p>Puntuaciones actualizadas tras cada jornada.</p>
+            </div>
+            <div class="table-container">
+                <table class="standings-table">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Pareja</th>
+                            <th>PJ</th>
+                            <th>G</th>
+                            <th>P</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clasificacion-body">
+                        <!-- Data will be injected here via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section: Calendario -->
+        <section id="calendario" class="page-section">
+            <div class="section-header">
+                <h2>Calendario de Partidas</h2>
+                <p>Próximos enfrentamientos y resultados recientes.</p>
+            </div>
+            <div class="calendar-wrapper">
+                <div class="calendar-header">
+                    <button id="prev-month" class="cal-btn">&lt;</button>
+                    <h3 id="calendar-month-year">Septiembre 2024</h3>
+                    <button id="next-month" class="cal-btn">&gt;</button>
+                </div>
+                <div class="calendar-grid" id="calendar-grid">
+                    <div class="cal-day-name">L</div>
+                    <div class="cal-day-name">M</div>
+                    <div class="cal-day-name">X</div>
+                    <div class="cal-day-name">J</div>
+                    <div class="cal-day-name">V</div>
+                    <div class="cal-day-name">S</div>
+                    <div class="cal-day-name">D</div>
+                    <!-- Data will be injected here via JS -->
+                </div>
+            </div>
+            
+            <div class="selected-day-container">
+                <h3 id="selected-date-title" class="selected-date-title">Selecciona un día</h3>
+                <div class="calendar-list" id="selected-day-matches">
+                    <p class="empty-state">No hay partidas programadas para hoy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Parejas -->
+        <section id="parejas" class="page-section">
+            <div class="section-header">
+                <h2>Parejas Participantes</h2>
+                <p>Las parejas inscritas en la modalidad actual.</p>
+            </div>
+            <div class="cards-grid" id="parejas-grid">
+                <!-- Data will be injected here via JS -->
+            </div>
+            <div id="team-detail" class="team-detail" style="display: none;">
+                <h3 id="team-detail-title" class="team-detail-title"></h3>
+                <div id="team-detail-matches" class="calendar-list">
+                    <!-- Matches injected here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="logo.jpg" alt="Escudo Falla Sant Roc" class="footer-logo">
+            <p>&copy; 2026 Falla Sant Roc Paterna. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
